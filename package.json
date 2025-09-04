@@ -1,5 +1,5 @@
 {
-  "homepage": "https:///bhanu250506.github.io/devStack",
+"homepage": "https://bhanu250506.github.io/devStack",
   "name": "web",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-"deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
