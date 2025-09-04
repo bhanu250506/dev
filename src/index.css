@@ -1,0 +1,60 @@
+@import "tailwindcss";
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  overscroll-behavior: none;
+}
+
+
+/* Custom Styles */
+@layer components {
+  /* Hero Section Background */
+  .hero-bg {
+    background-color: #0A0A0A;
+    background-image:
+      radial-gradient(at 20% 25%, hsla(268, 80%, 30%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 30%, hsla(212, 80%, 40%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 20% 80%, hsla(268, 80%, 50%, 0.2) 0px, transparent 50%),
+      radial-gradient(at 80% 85%, hsla(212, 80%, 40%, 0.2) 0px, transparent 50%);
+  }
+
+  /* Glassmorphism Card Effect */
+  .glass-card {
+    background: rgba(17, 24, 39, 0.5); /* bg-gray-900 with 50% opacity */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .glass-card:hover {
+    border: 1px solid rgba(99, 102, 241, 0.5); /* Indigo color */
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+  }
+
+  /* Portfolio Card Overlay */
+  .portfolio-card {
+    position: relative;
+    overflow: hidden;
+  }
+  .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+  }
+}
