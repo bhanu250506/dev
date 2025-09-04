@@ -1,17 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
+import space from "../assets/space.json"
 
 const HeroSection = () => {
-  const [animationData, setAnimationData] = useState(null);
-
-  useEffect(() => {
-    fetch("/space.json")
-      .then((res) => res.json())
-      .then((data) => setAnimationData(data))
-      .catch((err) => console.error("Error loading Lottie:", err));
-  }, []);
-
   // Title Animation
   const container = {
     hidden: { opacity: 0 },
@@ -20,7 +12,11 @@ const HeroSection = () => {
 
   const item = {
     hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 100 },
+    },
   };
 
   const title = "We Build Web & Mobile Applications";
@@ -83,13 +79,13 @@ const HeroSection = () => {
               href="#portfolio"
               className="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/60 transition-transform transform hover:scale-105 hover:-translate-y-1"
             >
-               See Our Work
+              See Our Work
             </a>
             <a
               href="#contact"
               className="px-8 py-4 rounded-xl border border-slate-700 bg-slate-800/40 backdrop-blur-md text-slate-200 font-semibold hover:bg-slate-700/50 transition-transform transform hover:scale-105 hover:-translate-y-1"
             >
-               Get a Free Quote
+              Get a Free Quote
             </a>
           </motion.div>
         </div>
@@ -102,13 +98,11 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 0.8, type: "spring" }}
           whileHover={{ rotate: 3, scale: 1.05 }}
         >
-          {animationData ? (
-            <Lottie animationData={animationData} loop className="w-full h-full max-w-lg" />
-          ) : (
-            <div className="w-full aspect-square flex items-center justify-center bg-slate-800/50 rounded-2xl">
-              <p className="text-slate-400">Loading Animation...</p>
-            </div>
-          )}
+          <Lottie
+            animationData={space}
+            loop
+            className="w-full h-full max-w-lg"
+          />
         </motion.div>
       </div>
     </section>
