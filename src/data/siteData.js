@@ -27,16 +27,36 @@ export const serviceData = [
 ];
 
 export const techStackData = [
-    { name: 'Next.js', icon: 'https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg' },
-    { name: 'React', icon: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg' },
-    { name: 'Flutter', icon: 'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg' },
-    { name: 'Node.js', icon: 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg' },
-    { name: 'Spring Boot', icon: 'https://www.vectorlogo.zone/logos/springio/springio-icon.svg' },
-    { name: 'Firebase', icon: 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg' },
-    { name: 'Figma', icon: 'https://www.vectorlogo.zone/logos/figma/figma-icon.svg' },
-    { name: 'HTML5', icon: 'https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg' },
-    { name: 'CSS3', icon: 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg' },
+  // --- Frontend ---
+  { name: 'Next.js', icon: 'https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg' },
+  { name: 'React', icon: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg' },
+  { name: 'HTML5', icon: 'https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg' },
+  { name: 'CSS3', icon: 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg' },
+  { name: 'Tailwind CSS', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
+
+  // --- Mobile ---
+  { name: 'Flutter', icon: 'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg' },
+
+  // --- Backend ---
+  { name: 'Node.js', icon: 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg' },
+  { name: 'Express.js', icon: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg' },
+  { name: 'Spring Boot', icon: 'https://www.vectorlogo.zone/logos/springio/springio-icon.svg' },
+  { name: 'Go (Golang)', icon: 'https://www.vectorlogo.zone/logos/golang/golang-icon.svg' },
+  { name: 'MongoDB', icon: 'https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg' },
+  { name: 'MySQL', icon: 'https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg' },
+  { name: 'Firebase', icon: 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg' },
+
+  // --- Cybersecurity / DevOps ---
+  { name: 'Linux', icon: 'https://www.vectorlogo.zone/logos/linux/linux-icon.svg' },
+  { name: 'Wireshark', icon: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Wireshark_icon.svg' },
+  { name: 'Docker', icon: 'https://www.vectorlogo.zone/logos/docker/docker-icon.svg' },
+  { name: 'GitHub', icon: 'https://www.vectorlogo.zone/logos/github/github-icon.svg' },
+
+  // --- Tools & Design ---
+  { name: 'Postman', icon: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg' },
+  { name: 'Figma', icon: 'https://www.vectorlogo.zone/logos/figma/figma-icon.svg' },
 ];
+
 export const testimonialsData = [
     { name: 'Ashok Chouchan', role: 'Teacher', review: 'Working with Bhanu was a fantastic experience. The final product exceeded our expectations, and the communication throughout was excellent.', avatar: ashok },
 {

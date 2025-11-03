@@ -9,89 +9,134 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { delay: i * 0.15, type: "spring", stiffness: 120 },
+    transition: { delay: i * 0.12, type: "spring", stiffness: 120 },
   }),
 };
 
-const ServiceSection = () => (
-  <AnimationSection>
-    <section
-      id="service"
-      className="py-24 md:py-32 bg-gradient-to-b from-slate-950 via-black to-slate-950"
-    >
-      <div className="container mx-auto px-6">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <h2 className="font-poppins text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            Our Services
-          </h2>
-          <p className="text-slate-300 text-lg leading-relaxed">
-            Delivering{" "}
-            <span className="text-indigo-400 font-semibold">end-to-end</span> digital
-            solutions with{" "}
-            <span className="text-purple-400 font-semibold">creativity</span> and{" "}
-            <span className="text-cyan-400 font-semibold">innovation</span>.
-          </p>
-        </motion.div>
+const ServiceSection = () => {
+  // Security-focused services to append
+  const securityServices = [
+    {
+      title: "Penetration Testing",
+      description:
+        "Simulated attacks to identify exploitable vulnerabilities across web and mobile applications.",
+      Imageurl: "/icons/pentest.svg", // replace with your icon path
+    },
+    {
+      title: "Vulnerability Assessment",
+      description:
+        "Automated scanning and manual verification to find and prioritize weaknesses in infrastructure and apps.",
+      Imageurl: "/icons/vuln-assess.svg",
+    },
+    {
+      title: "Security Audits & Hardening",
+      description:
+        "Configuration reviews, secure coding checks and system hardening recommendations to reduce attack surface.",
+      Imageurl: "/icons/audit.svg",
+    },
+    {
+      title: "Threat Modeling & Secure Design",
+      description:
+        "Architectural reviews to identify threats early and design robust, defensible systems with best practices.",
+      Imageurl: "/icons/threat-model.svg",
+    },
+    {
+      title: "Incident Response & Forensics",
+      description:
+        "Reactive playbooks and forensic analysis to contain incidents, preserve evidence, and restore services.",
+      Imageurl: "/icons/incident.svg",
+    },
+  ];
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {serviceData.map((service, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              whileHover={{ y: -12, scale: 1.05, rotate: -0.5 }}
-              className="group relative p-8 rounded-2xl bg-slate-800/40 border border-slate-700/50
-                         backdrop-blur-xl shadow-lg hover:shadow-indigo-500/30 
-                         transition-all duration-300 flex flex-col items-center text-center"
-            >
-              {/* Service Image */}
-              <div
-                className="w-24 h-24 mb-6 rounded-full bg-gradient-to-tr from-indigo-500/40 via-purple-500/40 to-cyan-500/40 
-                           flex items-center justify-center group-hover:scale-110 
-                           transition-all duration-300 shadow-inner"
+  // Combine original services with security additions (security ones appear last)
+  const extendedServices = [...serviceData, ...securityServices];
+
+  return (
+    <AnimationSection>
+      <section
+        id="service"
+        className="py-24 md:py-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden"
+      >
+        <div className="container mx-auto px-6">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <h2 className="font-poppins text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+              What I Do 💻
+            </h2>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              I build and secure products — from mobile apps and modern web platforms to
+              comprehensive security testing and hardening. I focus on{" "}
+              <span className="text-indigo-400 font-semibold">development</span>,{" "}
+              <span className="text-purple-400 font-semibold">security</span>, and{" "}
+              <span className="text-cyan-400 font-semibold">reliability</span>.
+            </p>
+          </motion.div>
+
+          {/* Cards grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {extendedServices.map((service, index) => (
+              <motion.div
+                key={index}
+                custom={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                whileHover={{
+                  y: -10,
+                  scale: 1.05,
+                  rotate: -0.8,
+                }}
+                className="group relative p-8 rounded-2xl bg-slate-800/40 border border-slate-700/50
+                         backdrop-blur-xl shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 
+                         flex flex-col items-center text-center overflow-hidden"
               >
-                <motion.img
-                  src={service.Imageurl}
-                  alt={service.title}
-                  className="w-14 h-14 object-contain drop-shadow-lg"
-                  whileHover={{ scale: 1.2, rotate: 6 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                />
-              </div>
+                {/* Floating Gradient Glow on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 blur-2xl transition duration-500"></div>
 
-              {/* Service Title */}
-              <h3 className="font-poppins text-xl font-semibold text-indigo-300 group-hover:text-white transition-colors mb-3">
-                {service.title}
-              </h3>
+                {/* Icon */}
+                <div
+                  className="relative z-10 w-20 h-20 mb-6 rounded-full bg-gradient-to-tr from-indigo-500/40 via-purple-500/40 to-cyan-500/40 
+                           flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-inner"
+                >
+                  <motion.img
+                    src={service.Imageurl}
+                    alt={service.title}
+                    className="w-12 h-12 object-contain drop-shadow-lg"
+                    whileHover={{ scale: 1.16, rotate: 6 }}
+                    transition={{ type: "spring", stiffness: 200 }}
+                  />
+                </div>
 
-              {/* Description */}
-              <p className="text-slate-400 text-sm leading-relaxed mb-6 group-hover:text-slate-200 transition-colors">
-                {service.description}
-              </p>
+                {/* Title */}
+                <h3 className="font-poppins text-xl font-semibold text-indigo-300 group-hover:text-white transition-colors mb-3">
+                  {service.title}
+                </h3>
 
-              {/* CTA */}
-              <a
-                href="#contact"
-                className="mt-auto font-medium bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text hover:from-cyan-400 hover:to-indigo-400 transition-all"
-              >
-                Hire for this →
-              </a>
-            </motion.div>
-          ))}
+                {/* Description */}
+                <p className="text-slate-400 text-sm leading-relaxed mb-6 group-hover:text-slate-200 transition-colors">
+                  {service.description}
+                </p>
+
+                {/* CTA */}
+                <a
+                  href="#contact"
+                  className="relative z-10 font-medium bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text hover:from-cyan-400 hover:to-indigo-400 transition-all"
+                >
+                  Let's collaborate →
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  </AnimationSection>
-);
+      </section>
+    </AnimationSection>
+  );
+};
 
 export default ServiceSection;
